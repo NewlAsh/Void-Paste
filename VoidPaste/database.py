@@ -1,13 +1,23 @@
 #database.py
+import os
+import urllib.parse
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
+from dotenv import load_dotenv
 
-SQLALCHEMY_DATABASE_URL = "sqlite+aiosqlite:///./voidPaste.db"
+# engine = create_async_engine(
+#     SQLALCHEMY_DATABASE_URL,
+#     connect_args={"check_same_thread": False},
+# )
+load_dotenv()
+raw_passcode = os.getenv("DB_PASSCODE")
+db_name = os.getenv("DB_NAME")
 
-engine = create_async_engine(
-    SQLALCHEMY_DATABASE_URL,
-    connect_args={"check_same_thread": False},
-)
+encoded_passcode  = urllib.parse.quote_plus(raw_passcode)
+
+SQLALCHEMY_DATABASE_URL = f"postgresql+asyncpg://postgres:{encoded_passcode}@localhost:5432/{db_name}"
+
+engine = create_async_engine(SQLALCHEMY_DATABASE_URL)
 
 
 #initiating the conversation with database (this shit aint tuff)
