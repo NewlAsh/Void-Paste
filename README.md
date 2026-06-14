@@ -515,16 +515,6 @@ uvicorn main:app --reload
 
 ```
 
-
-
-You should now see:
-
-
-
-```bash
-
-Uvicorn running on http://127.0.0.1:8000
-
 ```
 
 
