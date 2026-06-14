@@ -2,7 +2,7 @@
 
 
 
-> A modern full-stack code snippet sharing platform built with FastAPI, SQLAlchemy, React, and Tailwind CSS.
+> A modern backend-focused code snippet sharing platform built with FastAPI, SQLAlchemy
 
 >
 
@@ -90,7 +90,7 @@
 
 
 
-# ⚙️ How The Application Works
+# ⚙️ How the Application Works
 
 
 
