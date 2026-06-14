@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.db
+.env
+voidpaste-client/node_modules/
+voidpaste-client/dist/
